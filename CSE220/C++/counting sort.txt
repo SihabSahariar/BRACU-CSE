@@ -1,0 +1,55 @@
+/*** Counting Sort/ Key Index Sort ***/
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+int input;cin>>input;
+   int arra[input];
+   int mx =0;
+   
+   for(int i=0;i<input;i++)
+   {
+       int x;cin>>x;
+       if(x>mx)mx=x;
+       arra[i]=x;
+   }
+   
+   int arra_copy[mx+1];
+   for(int j=0;j<mx+1;j++)arra_copy[j]=0;
+   
+   for(int t=0;t<input;t++)
+   {
+       arra_copy[arra[t]]++;
+   }
+   
+/***
+  //Count Element Freequency in an array 
+  for(int i =0;i<input;i++)cout<<arra[i]<<" ";
+  cout<<endl;
+  for(int i=0;i<mx+1;i++){
+      if(arra_copy[i]>0)cout<<i<<"->"<<arra_copy[i]<<endl;
+  }
+  
+***/
+   cout<<"Given Array -"<<endl;
+   for(int i=0;i<input;i++)cout<<arra[i]<<" ";
+   cout<<"\n"<<endl;
+   int i=0,c=0;
+   while(i<mx+1)
+   {
+       if(arra_copy[i]>0)
+       {
+           arra[c++]=i;
+           arra_copy[i]--;
+       }
+       else
+       {
+           i++;
+       }
+   }
+   cout<<"Sorted Array -"<<endl;
+   for(int i=0;i<input;i++)cout<<arra[i]<<" ";
+   return 0;
+}

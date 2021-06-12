@@ -1,0 +1,147 @@
+#------------------------------------Task1----------------------------------------------
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+        
+        
+
+class DoublyList:
+    def __init__(self, lst):
+        self.head = None 
+        for i in lst: 
+            new_node = Node(i)
+            tmp = self.head
+            x=False
+            while(tmp):
+                if tmp.data==i:
+                    x=True
+                    break
+                tmp=tmp.next
+                if tmp==self.head:
+                    break
+            if x==False:        
+                if self.head == None: 
+                    self.head = new_node
+                    new_node.next = new_node
+                    new_node.prev = new_node
+                else:
+                    last = self.head.prev 
+                    new_node.next = self.head 
+                    self.head.prev = new_node
+                    new_node.prev = last 
+                    last.next = new_node 
+
+
+#------------------------------------Task2----------------------------------------------
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+        self.prev=None
+class DoublyList:
+    def __init__(self,lst=None):
+        self.head=None
+        self.tail=None
+        if lst != None:
+            node=Node('Dummy')
+            self.head=node
+            self.tail=node
+            for i in lst:
+                node=Node(i)
+                self.tail.next = node
+                node.prev = self.tail
+                self.tail = node
+                
+            self.tail.next=self.head
+            self.tail.next.prev=self.head
+            
+            
+    def showList(self):
+        n=self.head.next
+        if n==None:
+            return 'Empty List'
+        while n.next!=self.head:
+            print(n.data,end="⇌")
+            n=n.next
+        print(n.data)
+        
+        
+    def insert(self,newElement,index=None):
+        new_node=Node(newElement)
+        c = 0
+        if index is None:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+            self.tail.next = self.head
+            self.tail.next.prev = self.head
+            return
+        
+        it = self.head.next
+        while True:
+            if it == self.head:
+                break
+            if c+1 == index:
+                break
+            c += 1
+            it = it.next
+            
+        if it== self.head:
+            print("Not a valid Index")
+            return
+        
+        temp ,it.next= it.next,new_node
+        new_node.prev,new_node.next = it,temp
+        temp.prev = new_node
+
+    def remove(self,index):
+        it = self.head.next
+        c = 0
+        while True:
+            if it.next == self.head:
+                break
+            if index  == c+1:
+                break
+            c += 1
+            it = it.next
+            
+        if it.next == self.head:
+            print("Invalid Index")
+            return
+        node = it.next
+        it.next = node.next
+        node.next.prev = it
+        node.next=node.prev = None
+        
+        
+    def removeKey(self, deletekey):
+        n = self.head
+        while True:
+            if n.next == self.head:
+                break
+            if n.data== deletekey:
+                n=n.prev
+                break
+            n = n.next
+        if n.next == self.head:
+            print("Invalid Index")
+            return
+        node = n.next
+        n.next = node.next
+        node.next.prev = n
+        node.next=node.prev = None
+
+#-----------------Tester------------------
+DoublyList()
+l1=[1,2,3,4,5]
+lst=DoublyList(l1)
+lst.showList()
+lst.insert(7,2)
+lst.showList()
+lst.insert(10,2)
+lst.showList()
+lst.remove(4)
+lst.showList()

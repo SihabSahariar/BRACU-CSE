@@ -1,0 +1,292 @@
+<html>
+<head><meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+span.cls_002{font-family:"Lucida Console",serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_002{font-family:"Lucida Console",serif;font-size:7.0px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_003{font-family:Times,serif;font-size:25.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_003{font-family:Times,serif;font-size:25.7px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_004{font-family:Times,serif;font-size:12.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_004{font-family:Times,serif;font-size:12.9px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_012{font-family:Times,serif;font-size:12.9px;color:rgb(0,0,238);font-weight:normal;font-style:normal;text-decoration: underline}
+div.cls_012{font-family:Times,serif;font-size:12.9px;color:rgb(0,0,238);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_006{font-family:Times,serif;font-size:19.3px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+div.cls_006{font-family:Times,serif;font-size:19.3px;color:rgb(0,0,0);font-weight:bold;font-style:normal;text-decoration: none}
+span.cls_007{font-family:Courier New,serif;font-size:10.5px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_007{font-family:Courier New,serif;font-size:10.5px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_008{font-family:Courier New,serif;font-size:11.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_008{font-family:Courier New,serif;font-size:11.3px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+span.cls_009{font-family:Courier New,serif;font-size:11.3px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_009{font-family:Courier New,serif;font-size:11.3px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_010{font-family:Times,serif;font-size:12.9px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+div.cls_010{font-family:Times,serif;font-size:12.9px;color:rgb(0,0,0);font-weight:normal;font-style:italic;text-decoration: none}
+span.cls_011{font-family:Times,serif;font-size:10.5px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+div.cls_011{font-family:Times,serif;font-size:10.5px;color:rgb(0,0,0);font-weight:normal;font-style:normal;text-decoration: none}
+-->
+</style>
+<script type="text/javascript" src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/wz_jsgraphics.js"></script>
+</head>
+<body>
+<div style="position:absolute;left:50%;margin-left:-297px;top:0px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/background1.jpg" width=595 height=842></div>
+<div style="position:absolute;left:18.00px;top:17.00px" class="cls_002"><span class="cls_002">Arrays in Java</span></div>
+<div style="position:absolute;left:517.71px;top:17.00px" class="cls_002"><span class="cls_002">8/11/11 1:06 PM</span></div>
+<div style="position:absolute;left:24.41px;top:40.60px" class="cls_003"><span class="cls_003">Arrays in Java</span></div>
+<div style="position:absolute;left:24.41px;top:87.85px" class="cls_004"><span class="cls_004">We looked at the basics of Java's built-in arrays, starting from creating an array to iterating over the</span></div>
+<div style="position:absolute;left:24.41px;top:102.26px" class="cls_004"><span class="cls_004">elements of an array, as well as at a few typical array manipulations in class today. See the link to a</span></div>
+<div style="position:absolute;left:24.41px;top:116.68px" class="cls_004"><span class="cls_004">complete implementation for you to play with at the end of this document.</span></div>
+<div style="position:absolute;left:24.41px;top:143.91px" class="cls_004"><span class="cls_004">Topics, in no particular order:</span></div>
+<div style="position:absolute;left:40.42px;top:171.14px" class="cls_004"><span class="cls_004">1. </span><span class="cls_012">Creating an array</span></div>
+<div style="position:absolute;left:40.42px;top:185.55px" class="cls_004"><span class="cls_004">2. </span><span class="cls_012">Iterating over the elements of an array</span></div>
+<div style="position:absolute;left:40.42px;top:199.97px" class="cls_004"><span class="cls_004">3. </span><span class="cls_012">Copying an array</span></div>
+<div style="position:absolute;left:40.42px;top:214.38px" class="cls_004"><span class="cls_004">4. </span><span class="cls_012">Resizing an array</span></div>
+<div style="position:absolute;left:40.42px;top:228.80px" class="cls_004"><span class="cls_004">5. </span><span class="cls_012">Reversing an array</span></div>
+<div style="position:absolute;left:40.42px;top:243.21px" class="cls_004"><span class="cls_004">6. </span><span class="cls_012">Shifing an array left</span></div>
+<div style="position:absolute;left:40.42px;top:257.63px" class="cls_004"><span class="cls_004">7. </span><span class="cls_012">Shifing an array right</span></div>
+<div style="position:absolute;left:40.42px;top:272.05px" class="cls_004"><span class="cls_004">8. </span><span class="cls_012">Inserting an element into an array</span></div>
+<div style="position:absolute;left:40.42px;top:286.46px" class="cls_004"><span class="cls_004">9. </span><span class="cls_012">Removing an element from an array</span></div>
+<div style="position:absolute;left:34.02px;top:300.88px" class="cls_004"><span class="cls_004">10. </span><span class="cls_012">Rotating an array left</span></div>
+<div style="position:absolute;left:34.02px;top:315.29px" class="cls_004"><span class="cls_004">11. </span><span class="cls_012">Rotating an array right</span></div>
+<div style="position:absolute;left:24.41px;top:344.92px" class="cls_006"><span class="cls_006">Creating an array</span></div>
+<div style="position:absolute;left:24.41px;top:382.56px" class="cls_004"><span class="cls_004">In Java, you create a new array in the following:</span></div>
+<div style="position:absolute;left:70.86px;top:420.20px" class="cls_007"><span class="cls_007">Foo[] x = new Foo[100];</span></div>
+<div style="position:absolute;left:24.41px;top:455.44px" class="cls_004"><span class="cls_004">Now </span><span class="cls_008">x</span><span class="cls_004"> refers to an array of 100 </span><span class="cls_008">Foo</span><span class="cls_004"> references. Note that the array doesn't actually contain the instances</span></div>
+<div style="position:absolute;left:24.41px;top:469.86px" class="cls_004"><span class="cls_004">of </span><span class="cls_008">Foo</span><span class="cls_004"> (the objects that is), but rather hold the references to the objects. We can assign other references to</span></div>
+<div style="position:absolute;left:24.41px;top:484.27px" class="cls_004"><span class="cls_004">this array:</span></div>
+<div style="position:absolute;left:70.86px;top:521.91px" class="cls_007"><span class="cls_007">Foo[] y = x;</span></div>
+<div style="position:absolute;left:24.41px;top:557.15px" class="cls_004"><span class="cls_004">Now </span><span class="cls_008">y</span><span class="cls_004"> is just another reference to the same array, and any change made through </span><span class="cls_008">y</span><span class="cls_004"> will change the array</span></div>
+<div style="position:absolute;left:24.41px;top:571.57px" class="cls_004"><span class="cls_004">referred to by </span><span class="cls_008">x</span><span class="cls_004">.</span></div>
+<div style="position:absolute;left:24.41px;top:598.80px" class="cls_004"><span class="cls_004">A Java array has a single attribute called </span><span class="cls_008">length</span><span class="cls_004"> that gives you the capacity of the array; </span><span class="cls_008">x.length</span><span class="cls_004"> for</span></div>
+<div style="position:absolute;left:24.41px;top:613.21px" class="cls_004"><span class="cls_004">example would produce the value 100 in this case. The capacity of an array is fixed, and once created,</span></div>
+<div style="position:absolute;left:24.41px;top:627.63px" class="cls_004"><span class="cls_004">cannot be changed. We "resize" and array by creating a new one with higher capacity, and copying the</span></div>
+<div style="position:absolute;left:24.41px;top:642.04px" class="cls_004"><span class="cls_004">elements to the new one. See </span><span class="cls_012">resizing an array</span><span class="cls_004"> for details.</span></div>
+<div style="position:absolute;left:24.41px;top:671.67px" class="cls_006"><span class="cls_006">Iterating over the elements of an array</span></div>
+<div style="position:absolute;left:24.41px;top:709.32px" class="cls_004"><span class="cls_004">Iterating over the elements of an array is the same as the following: </span><span class="cls_008">for each element v in the</span></div>
+<div style="position:absolute;left:24.41px;top:723.73px" class="cls_008"><span class="cls_008">array x, do </span><span class="cls_009">something</span><span class="cls_008"> with v</span><span class="cls_004">. There are two traditional </span><span class="cls_010">patterns</span><span class="cls_004"> for iterating over the elements of</span></div>
+<div style="position:absolute;left:24.41px;top:738.15px" class="cls_004"><span class="cls_004">an array: using a </span><span class="cls_008">while</span><span class="cls_004"> or a </span><span class="cls_008">for</span><span class="cls_004"> loop. Let's print the elements of the array </span><span class="cls_008">x</span><span class="cls_004"> using a </span><span class="cls_008">while</span><span class="cls_004"> loop (here the</span></div>
+<div style="position:absolute;left:24.41px;top:752.56px" class="cls_009"><span class="cls_009">doing something</span><span class="cls_004"> is printing the element):</span></div>
+<div style="position:absolute;left:18.00px;top:791.00px" class="cls_002"><span class="cls_002">file:///Users/mumit/Sites/Classes/Summer-11/CSE-220/lectures/array-notes.html</span></div>
+<div style="position:absolute;left:538.63px;top:791.00px" class="cls_002"><span class="cls_002">Page 1 of 6</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:852px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/background2.jpg" width=595 height=842></div>
+<div style="position:absolute;left:18.00px;top:17.00px" class="cls_002"><span class="cls_002">Arrays in Java</span></div>
+<div style="position:absolute;left:517.71px;top:17.00px" class="cls_002"><span class="cls_002">8/11/11 1:06 PM</span></div>
+<div style="position:absolute;left:70.86px;top:52.61px" class="cls_007"><span class="cls_007">int i = 0;</span></div>
+<div style="position:absolute;left:70.86px;top:64.62px" class="cls_007"><span class="cls_007">while (i &lt; x.length) {</span></div>
+<div style="position:absolute;left:95.85px;top:76.64px" class="cls_007"><span class="cls_007">System.out.println(x[i]);</span></div>
+<div style="position:absolute;left:95.85px;top:88.65px" class="cls_007"><span class="cls_007">i++;</span></div>
+<div style="position:absolute;left:70.86px;top:100.66px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:135.90px" class="cls_004"><span class="cls_004">And then using </span><span class="cls_008">for</span><span class="cls_004"> loop:</span></div>
+<div style="position:absolute;left:70.86px;top:173.54px" class="cls_007"><span class="cls_007">for (int i = 0; i &lt; x.length; i++)</span></div>
+<div style="position:absolute;left:95.85px;top:185.55px" class="cls_007"><span class="cls_007">System.out.println(x[i]);</span></div>
+<div style="position:absolute;left:24.41px;top:220.79px" class="cls_004"><span class="cls_004">Java has another form of the </span><span class="cls_008">for</span><span class="cls_004"> loop to implement this "foreach" pattern:</span></div>
+<div style="position:absolute;left:70.86px;top:258.43px" class="cls_007"><span class="cls_007">for (Foo v : x)</span></div>
+<div style="position:absolute;left:95.85px;top:270.44px" class="cls_007"><span class="cls_007">System.out.println(v);</span></div>
+<div style="position:absolute;left:24.41px;top:305.68px" class="cls_004"><span class="cls_004">This version of the </span><span class="cls_008">for</span><span class="cls_004"> has one advantage: it does exactly what it says - for each element v in the array x,</span></div>
+<div style="position:absolute;left:24.41px;top:320.10px" class="cls_004"><span class="cls_004">it prints the element v! No indexing needed at all. It also has a disadvantage: there is no way to iterate</span></div>
+<div style="position:absolute;left:24.41px;top:334.51px" class="cls_004"><span class="cls_004">over a part of the array, which is important when the </span><span class="cls_010">size</span><span class="cls_004"> is not equal to the </span><span class="cls_010">capacity</span><span class="cls_004"> of the array.</span></div>
+<div style="position:absolute;left:24.41px;top:364.14px" class="cls_006"><span class="cls_006">Copying an array</span></div>
+<div style="position:absolute;left:24.41px;top:401.79px" class="cls_004"><span class="cls_004">Copying the elements of a </span><span class="cls_010">source</span><span class="cls_004"> array to </span><span class="cls_010">destination</span><span class="cls_004"> array is simply a matter of copying the array</span></div>
+<div style="position:absolute;left:24.41px;top:416.20px" class="cls_004"><span class="cls_004">element by element using an iterator.</span></div>
+<div style="position:absolute;left:70.86px;top:453.84px" class="cls_007"><span class="cls_007">public static Object[] copyArray(Object[] source) {</span></div>
+<div style="position:absolute;left:95.85px;top:465.85px" class="cls_007"><span class="cls_007">Object[] copy = new Object[source.length];</span></div>
+<div style="position:absolute;left:95.85px;top:477.87px" class="cls_007"><span class="cls_007">for (int i = 0; i &lt; source.length; i++)</span></div>
+<div style="position:absolute;left:120.84px;top:489.88px" class="cls_007"><span class="cls_007">copy[i] = source[i];</span></div>
+<div style="position:absolute;left:95.85px;top:513.91px" class="cls_007"><span class="cls_007">return copy;</span></div>
+<div style="position:absolute;left:70.86px;top:525.92px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:561.16px" class="cls_004"><span class="cls_004">For you information, the </span><span class="cls_008">java.util.Arrays</span><span class="cls_004"> class provides a set of methods to do just this for you in a</span></div>
+<div style="position:absolute;left:24.41px;top:575.57px" class="cls_004"><span class="cls_004">very efficient way. Here's how:</span></div>
+<div style="position:absolute;left:70.86px;top:613.21px" class="cls_007"><span class="cls_007">public static Object[] copyArray(Object[] source) {</span></div>
+<div style="position:absolute;left:95.85px;top:625.23px" class="cls_007"><span class="cls_007">Object[] copy = java.util.Arrays.copyOf(source, source.length);</span></div>
+<div style="position:absolute;left:95.85px;top:637.24px" class="cls_007"><span class="cls_007">return copy;</span></div>
+<div style="position:absolute;left:70.86px;top:649.25px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:686.89px" class="cls_006"><span class="cls_006">Resizing an array</span></div>
+<div style="position:absolute;left:24.41px;top:724.53px" class="cls_004"><span class="cls_004">There is the classic problem of arrays - once created, it cannot change its capacity! The only way to</span></div>
+<div style="position:absolute;left:24.41px;top:738.95px" class="cls_004"><span class="cls_004">"resize" an array is to first create a new and larger array, and copy the existing elements to the new array.</span></div>
+<div style="position:absolute;left:24.41px;top:753.36px" class="cls_004"><span class="cls_004">The following static method resizes </span><span class="cls_008">oldArray</span><span class="cls_004"> to have a capacity of </span><span class="cls_008">newCapacity</span><span class="cls_004">, and returns a</span></div>
+<div style="position:absolute;left:18.00px;top:791.00px" class="cls_002"><span class="cls_002">file:///Users/mumit/Sites/Classes/Summer-11/CSE-220/lectures/array-notes.html</span></div>
+<div style="position:absolute;left:538.63px;top:791.00px" class="cls_002"><span class="cls_002">Page 2 of 6</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:1704px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/background3.jpg" width=595 height=842></div>
+<div style="position:absolute;left:18.00px;top:17.00px" class="cls_002"><span class="cls_002">Arrays in Java</span></div>
+<div style="position:absolute;left:517.71px;top:17.00px" class="cls_002"><span class="cls_002">8/11/11 1:06 PM</span></div>
+<div style="position:absolute;left:24.41px;top:43.00px" class="cls_004"><span class="cls_004">reference to the resized array.</span></div>
+<div style="position:absolute;left:70.86px;top:80.64px" class="cls_007"><span class="cls_007">static Object[] resize(Object[] oldArray, int newCapacity) {</span></div>
+<div style="position:absolute;left:95.85px;top:92.65px" class="cls_007"><span class="cls_007">Object[] newArray = new Object[newCapacity];</span></div>
+<div style="position:absolute;left:95.85px;top:104.67px" class="cls_007"><span class="cls_007">for (int i = 0; i &lt; oldArray.length; i++)</span></div>
+<div style="position:absolute;left:120.84px;top:116.68px" class="cls_007"><span class="cls_007">newArray[i] = oldArray[i];</span></div>
+<div style="position:absolute;left:95.85px;top:128.69px" class="cls_007"><span class="cls_007">return newArray;</span></div>
+<div style="position:absolute;left:70.86px;top:140.71px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:175.94px" class="cls_004"><span class="cls_004">We can use this method in the following way:</span></div>
+<div style="position:absolute;left:70.86px;top:213.58px" class="cls_007"><span class="cls_007">Object[] data = new Object[10];</span></div>
+<div style="position:absolute;left:70.86px;top:225.60px" class="cls_007"><span class="cls_007">for (int i = 0; i &lt; 10; i++)</span></div>
+<div style="position:absolute;left:95.85px;top:237.61px" class="cls_007"><span class="cls_007">data[i] = new String(String.valueOf(i));</span></div>
+<div style="position:absolute;left:70.86px;top:261.64px" class="cls_007"><span class="cls_007">// The array "data" is now full, so need to resize before we can</span></div>
+<div style="position:absolute;left:70.86px;top:273.65px" class="cls_007"><span class="cls_007">// add more elements to it.</span></div>
+<div style="position:absolute;left:70.86px;top:285.66px" class="cls_007"><span class="cls_007">data = resize(data, 20);</span></div>
+<div style="position:absolute;left:70.86px;top:297.67px" class="cls_007"><span class="cls_007">for (int i = 10; i &lt; 20; i++)</span></div>
+<div style="position:absolute;left:95.85px;top:309.69px" class="cls_007"><span class="cls_007">data[i] = new String(String.valueOf(i));</span></div>
+<div style="position:absolute;left:24.41px;top:347.33px" class="cls_006"><span class="cls_006">Reversing an array</span></div>
+<div style="position:absolute;left:24.41px;top:384.97px" class="cls_004"><span class="cls_004">The simplest way of reversing an array is to first copy the elements to another array in the reverse order,</span></div>
+<div style="position:absolute;left:24.41px;top:399.38px" class="cls_004"><span class="cls_004">and then copy the elements back to the original array. This </span><span class="cls_010">out-of-place</span><span class="cls_004"> method is rather inefficient, but</span></div>
+<div style="position:absolute;left:24.41px;top:413.80px" class="cls_004"><span class="cls_004">it's simple and it works.</span></div>
+<div style="position:absolute;left:70.86px;top:451.44px" class="cls_007"><span class="cls_007">public static void reverse(Object[] array) {</span></div>
+<div style="position:absolute;left:95.85px;top:463.45px" class="cls_007"><span class="cls_007">Object[] tmpArray = new Object[array.length];</span></div>
+<div style="position:absolute;left:95.85px;top:475.46px" class="cls_007"><span class="cls_007">int i = 0;</span></div>
+<div style="position:absolute;left:320.77px;top:475.46px" class="cls_007"><span class="cls_007">// index into array</span></div>
+<div style="position:absolute;left:95.85px;top:487.48px" class="cls_007"><span class="cls_007">int j = tmpArray.length - 1;</span></div>
+<div style="position:absolute;left:320.77px;top:487.48px" class="cls_007"><span class="cls_007">// index into the reverse copy</span></div>
+<div style="position:absolute;left:95.85px;top:499.49px" class="cls_007"><span class="cls_007">while (i &lt; array.length) {</span></div>
+<div style="position:absolute;left:120.84px;top:511.50px" class="cls_007"><span class="cls_007">tmpArray[j] = array[i];</span></div>
+<div style="position:absolute;left:120.84px;top:523.52px" class="cls_007"><span class="cls_007">i++;</span></div>
+<div style="position:absolute;left:120.84px;top:535.53px" class="cls_007"><span class="cls_007">j--;</span></div>
+<div style="position:absolute;left:95.85px;top:547.54px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:95.85px;top:559.55px" class="cls_007"><span class="cls_007">// Now copy the elements in tmpArray back into the original array.</span></div>
+<div style="position:absolute;left:95.85px;top:571.57px" class="cls_007"><span class="cls_007">for (int i = 0; i &lt; array.length; i++)</span></div>
+<div style="position:absolute;left:120.84px;top:583.58px" class="cls_007"><span class="cls_007">array[i] = tmpArray[i];</span></div>
+<div style="position:absolute;left:95.85px;top:607.61px" class="cls_007"><span class="cls_007">// NOTE: the following DOES NOT work! Why?</span></div>
+<div style="position:absolute;left:95.85px;top:619.62px" class="cls_007"><span class="cls_007">// array = tmparray;</span></div>
+<div style="position:absolute;left:70.86px;top:631.63px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:666.87px" class="cls_004"><span class="cls_004">Fortunately, there is an </span><span class="cls_010">in-place</span><span class="cls_004"> method that is far more efficient!</span></div>
+<div style="position:absolute;left:70.86px;top:704.51px" class="cls_007"><span class="cls_007">public static void reverse(Object[] array) {</span></div>
+<div style="position:absolute;left:95.85px;top:716.52px" class="cls_007"><span class="cls_007">int i = 0;</span></div>
+<div style="position:absolute;left:320.77px;top:716.52px" class="cls_007"><span class="cls_007">// forward index into left half</span></div>
+<div style="position:absolute;left:95.85px;top:728.54px" class="cls_007"><span class="cls_007">int j = array.length - 1;</span></div>
+<div style="position:absolute;left:320.77px;top:728.54px" class="cls_007"><span class="cls_007">// backward index into right half</span></div>
+<div style="position:absolute;left:95.85px;top:740.55px" class="cls_007"><span class="cls_007">while (i &lt; j) {</span></div>
+<div style="position:absolute;left:120.84px;top:752.56px" class="cls_007"><span class="cls_007">// Exchange array[i] with array[j]</span></div>
+<div style="position:absolute;left:120.84px;top:764.58px" class="cls_007"><span class="cls_007">Object tmp = array[i];</span></div>
+<div style="position:absolute;left:18.00px;top:791.00px" class="cls_002"><span class="cls_002">file:///Users/mumit/Sites/Classes/Summer-11/CSE-220/lectures/array-notes.html</span></div>
+<div style="position:absolute;left:538.63px;top:791.00px" class="cls_002"><span class="cls_002">Page 3 of 6</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:2556px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/background4.jpg" width=595 height=842></div>
+<div style="position:absolute;left:18.00px;top:17.00px" class="cls_002"><span class="cls_002">Arrays in Java</span></div>
+<div style="position:absolute;left:517.71px;top:17.00px" class="cls_002"><span class="cls_002">8/11/11 1:06 PM</span></div>
+<div style="position:absolute;left:120.84px;top:43.80px" class="cls_007"><span class="cls_007">array[i] = array[j];</span></div>
+<div style="position:absolute;left:120.84px;top:55.81px" class="cls_007"><span class="cls_007">array[j] = tmp;</span></div>
+<div style="position:absolute;left:120.84px;top:79.84px" class="cls_007"><span class="cls_007">i++;</span></div>
+<div style="position:absolute;left:120.84px;top:91.85px" class="cls_007"><span class="cls_007">j--;</span></div>
+<div style="position:absolute;left:95.85px;top:103.87px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:70.86px;top:115.88px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:153.52px" class="cls_006"><span class="cls_006">Shifing an array left</span></div>
+<div style="position:absolute;left:24.41px;top:191.16px" class="cls_004"><span class="cls_004">Shifting an entire array left moves each element one (or more, depending how the shift amount) position</span></div>
+<div style="position:absolute;left:24.41px;top:205.57px" class="cls_004"><span class="cls_004">to the left. Obviously, the first element in the array will </span><span class="cls_010">fall off</span><span class="cls_004"> the beginning and be lost forever. The last</span></div>
+<div style="position:absolute;left:24.41px;top:219.99px" class="cls_004"><span class="cls_004">slot of the array before the shift (ie., the slot where where the last element was until the shift) is now</span></div>
+<div style="position:absolute;left:24.41px;top:234.41px" class="cls_004"><span class="cls_004">unused (we can put a </span><span class="cls_008">null</span><span class="cls_004"> there to signify that). The size of the array remains the same however, because</span></div>
+<div style="position:absolute;left:24.41px;top:248.82px" class="cls_004"><span class="cls_004">the assumption is that you would something in the now-unused slot. For example, shifing the array </span><span class="cls_008">[5,</span></div>
+<div style="position:absolute;left:24.41px;top:263.24px" class="cls_008"><span class="cls_008">3, 9, 13, 2]</span><span class="cls_004"> left by one position will result in the array </span><span class="cls_008">[3, 9, 13, 2, -]</span><span class="cls_004">. Note how the </span><span class="cls_008">array[0]</span></div>
+<div style="position:absolute;left:24.41px;top:277.65px" class="cls_004"><span class="cls_004">element with value of </span><span class="cls_008">5</span><span class="cls_004"> is now lost, and there is an empty slot at the end (shown as </span><span class="cls_008">-</span><span class="cls_004"> above).</span></div>
+<div style="position:absolute;left:70.86px;top:315.29px" class="cls_007"><span class="cls_007">public static void shiftLeft(Object array[]) {</span></div>
+<div style="position:absolute;left:95.85px;top:327.30px" class="cls_007"><span class="cls_007">for (int i = 1; i &lt; array.length; i++)</span></div>
+<div style="position:absolute;left:120.84px;top:339.32px" class="cls_007"><span class="cls_007">array[i - 1] = array[i];</span></div>
+<div style="position:absolute;left:95.85px;top:351.33px" class="cls_007"><span class="cls_007">array[a.length - 1] = null;</span></div>
+<div style="position:absolute;left:320.77px;top:351.33px" class="cls_007"><span class="cls_007">// Now empty</span></div>
+<div style="position:absolute;left:70.86px;top:363.34px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:398.58px" class="cls_004"><span class="cls_004">What would happen if this were a </span><span class="cls_010">circular</span><span class="cls_004"> or </span><span class="cls_010">cyclic</span><span class="cls_004"> array? See show to </span><span class="cls_012">rotate an array left</span><span class="cls_004">.</span></div>
+<div style="position:absolute;left:24.41px;top:428.21px" class="cls_006"><span class="cls_006">Shifing an array right</span></div>
+<div style="position:absolute;left:24.41px;top:465.85px" class="cls_004"><span class="cls_004">Shifting an entire array right moves each element one (or more, depending how the shift amount) position</span></div>
+<div style="position:absolute;left:24.41px;top:480.27px" class="cls_004"><span class="cls_004">to the right. Obviously, the last element in the array will </span><span class="cls_010">fall off</span><span class="cls_004"> the end and be lost forever. The first slot</span></div>
+<div style="position:absolute;left:24.41px;top:495.49px" class="cls_004"><span class="cls_004">of the array before the shift (ie., the slot where where the 1</span><span class="cls_011"><sup>st</sup></span><span class="cls_004"> element was until the shift) is now unused</span></div>
+<div style="position:absolute;left:24.41px;top:512.30px" class="cls_004"><span class="cls_004">(we can put a </span><span class="cls_008">null</span><span class="cls_004"> there to signify that). The size of the array remains the same however, because the</span></div>
+<div style="position:absolute;left:24.41px;top:526.72px" class="cls_004"><span class="cls_004">assumption is that you would something in the now-unused slot. For example, shifing the array </span><span class="cls_008">[5, 3,</span></div>
+<div style="position:absolute;left:24.41px;top:541.13px" class="cls_008"><span class="cls_008">9, 13, 2]</span><span class="cls_004"> right by one position will result in the array </span><span class="cls_008">[-, 5, 3, 9, 13]</span><span class="cls_004">. Note how the </span><span class="cls_008">array[4]</span></div>
+<div style="position:absolute;left:24.41px;top:555.55px" class="cls_004"><span class="cls_004">element with value of </span><span class="cls_008">2</span><span class="cls_004"> is now lost, and there is an empty slot in the beginning (shown as </span><span class="cls_008">-</span><span class="cls_004"> above).</span></div>
+<div style="position:absolute;left:70.86px;top:593.19px" class="cls_007"><span class="cls_007">public static void shiftRight(Object array[]) {</span></div>
+<div style="position:absolute;left:95.85px;top:605.20px" class="cls_007"><span class="cls_007">for (int i = array.length - 1; i > 0; i--)</span></div>
+<div style="position:absolute;left:120.84px;top:617.22px" class="cls_007"><span class="cls_007">array[i] = array[i - 1];</span></div>
+<div style="position:absolute;left:95.85px;top:629.23px" class="cls_007"><span class="cls_007">array[0] = null;</span></div>
+<div style="position:absolute;left:320.77px;top:629.23px" class="cls_007"><span class="cls_007">// Now empty.</span></div>
+<div style="position:absolute;left:70.86px;top:641.24px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:676.48px" class="cls_004"><span class="cls_004">What would happen if this were a </span><span class="cls_010">circular</span><span class="cls_004"> or </span><span class="cls_010">cyclic</span><span class="cls_004"> array? See show to </span><span class="cls_012">rotate an array right</span><span class="cls_004">.</span></div>
+<div style="position:absolute;left:24.41px;top:706.11px" class="cls_006"><span class="cls_006">Inserting an element into an array</span></div>
+<div style="position:absolute;left:24.41px;top:743.75px" class="cls_004"><span class="cls_004">Inserting an element into any slot in an array requires that we first make </span><span class="cls_010">room</span><span class="cls_004"> for it by shifting some of</span></div>
+<div style="position:absolute;left:24.41px;top:758.17px" class="cls_004"><span class="cls_004">the elements to the right, and then insert the new element in the newly formed </span><span class="cls_010">gap</span><span class="cls_004">. The only time we</span></div>
+<div style="position:absolute;left:18.00px;top:791.00px" class="cls_002"><span class="cls_002">file:///Users/mumit/Sites/Classes/Summer-11/CSE-220/lectures/array-notes.html</span></div>
+<div style="position:absolute;left:538.63px;top:791.00px" class="cls_002"><span class="cls_002">Page 4 of 6</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:3408px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/background5.jpg" width=595 height=842></div>
+<div style="position:absolute;left:18.00px;top:17.00px" class="cls_002"><span class="cls_002">Arrays in Java</span></div>
+<div style="position:absolute;left:517.71px;top:17.00px" class="cls_002"><span class="cls_002">8/11/11 1:06 PM</span></div>
+<div style="position:absolute;left:24.41px;top:44.60px" class="cls_004"><span class="cls_004">don't have to shift is when we insert in the next available empty slot in the array (the one after the last</span></div>
+<div style="position:absolute;left:24.41px;top:59.02px" class="cls_004"><span class="cls_004">element). The insertion also assumes that there is at least one empty slot in the array, or else it must be</span></div>
+<div style="position:absolute;left:24.41px;top:73.43px" class="cls_004"><span class="cls_004">resized as we had done earlier (or, if it's </span><span class="cls_010">non-resizable</span><span class="cls_004"> by policy, then we can throw an exception). For</span></div>
+<div style="position:absolute;left:24.41px;top:87.85px" class="cls_004"><span class="cls_004">example, inserting the value </span><span class="cls_008">7</span><span class="cls_004"> in the slot with index </span><span class="cls_008">2</span><span class="cls_004"> in the array </span><span class="cls_008">[3, 9, 12, 5]</span><span class="cls_004"> produces the array</span></div>
+<div style="position:absolute;left:24.41px;top:102.26px" class="cls_008"><span class="cls_008">[3, 9, 7, 12, 5]</span><span class="cls_004">.</span></div>
+<div style="position:absolute;left:70.86px;top:139.90px" class="cls_007"><span class="cls_007">// Insert the given element at the given index in the non-resizable array</span></div>
+<div style="position:absolute;left:70.86px;top:151.92px" class="cls_007"><span class="cls_007">// with size elements.</span></div>
+<div style="position:absolute;left:70.86px;top:163.93px" class="cls_007"><span class="cls_007">public static void insert(Object[] array, int size, Object elem, int index) {</span></div>
+<div style="position:absolute;left:95.85px;top:175.94px" class="cls_007"><span class="cls_007">if (size == array.length)</span></div>
+<div style="position:absolute;left:120.84px;top:187.96px" class="cls_007"><span class="cls_007">throw new RuntimeException("no space left");</span></div>
+<div style="position:absolute;left:95.85px;top:199.97px" class="cls_007"><span class="cls_007">else {</span></div>
+<div style="position:absolute;left:120.84px;top:211.98px" class="cls_007"><span class="cls_007">// make a hole by shifting elements to the right.</span></div>
+<div style="position:absolute;left:120.84px;top:223.99px" class="cls_007"><span class="cls_007">for (int i = index; i &lt; size; i++)</span></div>
+<div style="position:absolute;left:145.82px;top:236.01px" class="cls_007"><span class="cls_007">array[i + 1] = array[i];</span></div>
+<div style="position:absolute;left:120.84px;top:260.03px" class="cls_007"><span class="cls_007">// now fill the hole/gap with the new element.</span></div>
+<div style="position:absolute;left:120.84px;top:272.05px" class="cls_007"><span class="cls_007">array[index] = elem;</span></div>
+<div style="position:absolute;left:95.85px;top:284.06px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:70.86px;top:296.07px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:333.71px" class="cls_006"><span class="cls_006">Removing an element from an array</span></div>
+<div style="position:absolute;left:24.41px;top:371.35px" class="cls_004"><span class="cls_004">After removing the element at a given index, we need to </span><span class="cls_010">plug the hole</span><span class="cls_004"> by shifting all the elements to its</span></div>
+<div style="position:absolute;left:24.41px;top:385.77px" class="cls_004"><span class="cls_004">right one position to the left.</span></div>
+<div style="position:absolute;left:70.86px;top:423.41px" class="cls_007"><span class="cls_007">// Removes the element at the given index from the array with size elements.</span></div>
+<div style="position:absolute;left:70.86px;top:435.42px" class="cls_007"><span class="cls_007">public static void remove(Object[] array, int size, int index) {</span></div>
+<div style="position:absolute;left:95.85px;top:447.43px" class="cls_007"><span class="cls_007">// Shift all elements [index+1 ... size-1] one position to the</span></div>
+<div style="position:absolute;left:95.85px;top:459.45px" class="cls_007"><span class="cls_007">// left.</span></div>
+<div style="position:absolute;left:95.85px;top:471.46px" class="cls_007"><span class="cls_007">for (int i = index + 1; i &lt; size; i++)</span></div>
+<div style="position:absolute;left:120.84px;top:483.47px" class="cls_007"><span class="cls_007">array[i - 1] = array[i];</span></div>
+<div style="position:absolute;left:95.85px;top:507.50px" class="cls_007"><span class="cls_007">// Now nullify the unused slot at the end.</span></div>
+<div style="position:absolute;left:95.85px;top:519.51px" class="cls_007"><span class="cls_007">array[size - 1] = null;</span></div>
+<div style="position:absolute;left:70.86px;top:531.52px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:569.16px" class="cls_006"><span class="cls_006">Rotating an array left</span></div>
+<div style="position:absolute;left:24.41px;top:607.61px" class="cls_004"><span class="cls_004">Rotating an array left is equivalent to shifting a </span><span class="cls_010">circular</span><span class="cls_004"> or </span><span class="cls_010">cyclic</span><span class="cls_004"> array left — the 1</span><span class="cls_011"><sup>st</sup></span><span class="cls_004"> element will not be</span></div>
+<div style="position:absolute;left:24.41px;top:624.42px" class="cls_004"><span class="cls_004">lost, but rather move to the last slot. Rotating the array </span><span class="cls_008">[5,</span></div>
+<div style="position:absolute;left:334.23px;top:624.42px" class="cls_008"><span class="cls_008">3, 9, 13, 2]</span><span class="cls_004"> left by one position will</span></div>
+<div style="position:absolute;left:24.41px;top:638.84px" class="cls_004"><span class="cls_004">result in the array </span><span class="cls_008">[3,</span></div>
+<div style="position:absolute;left:144.54px;top:638.84px" class="cls_008"><span class="cls_008">9, 13, 2, 5]</span><span class="cls_004">.</span></div>
+<div style="position:absolute;left:70.86px;top:676.48px" class="cls_007"><span class="cls_007">public static void rotateLeft(Object array[]) {</span></div>
+<div style="position:absolute;left:95.85px;top:688.49px" class="cls_007"><span class="cls_007">Object firstElement = array[0];</span></div>
+<div style="position:absolute;left:95.85px;top:700.51px" class="cls_007"><span class="cls_007">for (int i = 1; i &lt; array.length; i++)</span></div>
+<div style="position:absolute;left:120.84px;top:712.52px" class="cls_007"><span class="cls_007">array[i - 1] = array[i];</span></div>
+<div style="position:absolute;left:95.85px;top:724.53px" class="cls_007"><span class="cls_007">array[a.length - 1] = firstElement;</span></div>
+<div style="position:absolute;left:70.86px;top:736.54px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:18.00px;top:791.00px" class="cls_002"><span class="cls_002">file:///Users/mumit/Sites/Classes/Summer-11/CSE-220/lectures/array-notes.html</span></div>
+<div style="position:absolute;left:538.63px;top:791.00px" class="cls_002"><span class="cls_002">Page 5 of 6</span></div>
+</div>
+<div style="position:absolute;left:50%;margin-left:-297px;top:4260px;width:595px;height:842px;border-style:outset;overflow:hidden">
+<div style="position:absolute;left:0px;top:0px">
+<img src="05fdc50c-b539-11ea-8b25-0cc47a792c0a_id_05fdc50c-b539-11ea-8b25-0cc47a792c0a_files/background6.jpg" width=595 height=842></div>
+<div style="position:absolute;left:18.00px;top:17.00px" class="cls_002"><span class="cls_002">Arrays in Java</span></div>
+<div style="position:absolute;left:517.71px;top:17.00px" class="cls_002"><span class="cls_002">8/11/11 1:06 PM</span></div>
+<div style="position:absolute;left:24.41px;top:45.40px" class="cls_004"><span class="cls_004">There is a much more elegant solution that we'll see when we discuss </span><span class="cls_010">circular</span><span class="cls_004"> or </span><span class="cls_010">cyclic</span><span class="cls_004"> arrays (wait till</span></div>
+<div style="position:absolute;left:24.41px;top:59.82px" class="cls_004"><span class="cls_004">we study the Queue ADT).</span></div>
+<div style="position:absolute;left:24.41px;top:89.45px" class="cls_006"><span class="cls_006">Rotating an array right</span></div>
+<div style="position:absolute;left:24.41px;top:127.09px" class="cls_004"><span class="cls_004">Rotating an array right is equivalent to shifting a </span><span class="cls_010">circular</span><span class="cls_004"> or </span><span class="cls_010">cyclic</span><span class="cls_004"> array right — the last element will not</span></div>
+<div style="position:absolute;left:24.41px;top:142.31px" class="cls_004"><span class="cls_004">be lost, but rather move to the 1</span><span class="cls_011"><sup>st</sup></span><span class="cls_004"> slot. Rotating the array </span><span class="cls_008">[5,</span></div>
+<div style="position:absolute;left:345.08px;top:144.71px" class="cls_008"><span class="cls_008">3, 9, 13, 2]</span><span class="cls_004"> right by one position will</span></div>
+<div style="position:absolute;left:24.41px;top:159.12px" class="cls_004"><span class="cls_004">result in the array </span><span class="cls_008">[2,</span></div>
+<div style="position:absolute;left:144.54px;top:159.12px" class="cls_008"><span class="cls_008">5, 3, 9, 13]</span><span class="cls_004">.</span></div>
+<div style="position:absolute;left:70.86px;top:196.77px" class="cls_007"><span class="cls_007">public static void rotateRight(Object array[]) {</span></div>
+<div style="position:absolute;left:95.85px;top:208.78px" class="cls_007"><span class="cls_007">Object lastElement = array[array.length - 1];</span></div>
+<div style="position:absolute;left:95.85px;top:220.79px" class="cls_007"><span class="cls_007">for (int i = array.length - 1; i > 0; i--)</span></div>
+<div style="position:absolute;left:120.84px;top:232.80px" class="cls_007"><span class="cls_007">array[i] = array[i - 1];</span></div>
+<div style="position:absolute;left:95.85px;top:244.82px" class="cls_007"><span class="cls_007">array[0] = lastElement;</span></div>
+<div style="position:absolute;left:70.86px;top:256.83px" class="cls_007"><span class="cls_007">}</span></div>
+<div style="position:absolute;left:24.41px;top:292.07px" class="cls_004"><span class="cls_004">There is a much more elegant solution that we'll see when we discuss </span><span class="cls_010">circular</span><span class="cls_004"> or </span><span class="cls_010">cyclic</span><span class="cls_004"> arrays (wait till</span></div>
+<div style="position:absolute;left:24.41px;top:306.48px" class="cls_004"><span class="cls_004">we study the Queue ADT).</span></div>
+<div style="position:absolute;left:24.41px;top:333.71px" class="cls_004"><span class="cls_004">You can look at the example </span><span class="cls_012">ArrayExamples.java</span><span class="cls_004"> class to see how these can be implemented. Run the</span></div>
+<div style="position:absolute;left:24.41px;top:348.13px" class="cls_008"><span class="cls_008">ArrayExamples.main()</span><span class="cls_004"> to see the output.</span></div>
+<div style="position:absolute;left:18.00px;top:791.00px" class="cls_002"><span class="cls_002">file:///Users/mumit/Sites/Classes/Summer-11/CSE-220/lectures/array-notes.html</span></div>
+<div style="position:absolute;left:538.63px;top:791.00px" class="cls_002"><span class="cls_002">Page 6 of 6</span></div>
+</div>
+
+</body>
+</html>

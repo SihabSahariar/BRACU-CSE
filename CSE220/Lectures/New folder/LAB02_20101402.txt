@@ -1,0 +1,350 @@
+#SihabSahariar
+#ID-20101402
+
+#Task01
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+class MyList:
+        def __init__(self):
+            self.head = None
+            
+        def prlist(self):
+            temp = self.head
+            while(temp):
+                print(temp.data)
+                temp = temp.next 
+
+#------------Tester-------------                
+lst = MyList()
+el1 = Node(1)
+el2 = Node(13)
+el3 = Node(78)
+lst.head = el1
+el1.next = el2
+el2.next = el3
+
+lst.prlist()
+
+#------------------------------------------------------------------------------------------------------------------
+#Task02
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+        
+class MyList():
+    def __init__(self, lst=None):
+        self.head = None
+        if lst == None:
+            print("An Empty List")
+            
+        elif isinstance(lst, list):
+            if len(lst) == 0:
+                print('List cannot be empty.')
+                
+            else:
+                if lst:
+                    for i in lst:
+                        new_node = Node(i)
+                        if self.head == None:
+                            self.head = new_node
+                        else:
+                            last = self.head
+                            while(last.next):
+                                last = last.next
+                            last.next = new_node
+                    
+        elif isinstance(lst, MyList):
+            if lst == None:
+                print('List cannot be empty.')
+                
+            else:
+                now_marked = lst.head
+                new = None
+                tail = None   
+                
+                while now_marked:
+                    if new == None:
+                        new = Node(now_marked.data)
+                        tail = new
+                    else:
+                        tail.next = Node(now_marked.data)
+                        tail = tail.next
+                        tail.data = now_marked.data
+                        tail.next = None 
+                    while(now_marked) : #Printing statement of new copied linkedlist
+                            print(now_marked.data)  
+                            now_marked = now_marked.next
+                    print()
+                
+                
+        else:
+            print('invalid input')
+            
+    def showList(self):
+        if self.head==None:
+            print('This is an Empty List')
+        
+        else:
+            temp = self.head
+            while temp:
+                print(temp.data)
+                temp = temp.next  
+    def isEmpty(self):
+        if  self.head == None:
+            return True 
+        else:
+            return False
+        
+    def clear(self):
+        if self.head==None:
+            print("List Can't be empty")
+        else:
+            self.head = None
+            
+    def insert(self, newElement,index=None):
+        if index == None:
+            new_node = Node(newElement)
+            if self.head ==None:
+                self.head = new_node
+                return
+            temp = self.head
+            while temp.next:
+                temp= temp.next
+            temp.next = new_node
+        elif self.head!= None:
+            new_node = Node(newElement)
+            tmp = self.head
+            x = ""
+            while tmp:                 
+                if(tmp.data == newElement):
+                    x = "-1"
+                    break
+                tmp = tmp.next
+
+            tmp = self.head
+            tail = tmp
+            count = 0
+            if x != "-1" and index >= 0:   
+                while(tmp != None):
+                    if(count == index):
+                        tail.next = new_node
+                        new_node.next = tmp
+                    count += 1
+                    tail = tmp
+                    tmp = tmp.next
+        else:
+            print("This is an Empty List")
+                                       
+    def remove(self, deletekey): 
+        temp = self.head 
+        if temp: 
+            if temp.data == deletekey: 
+                self.head = temp.next
+                temp = None
+                return self.head.data
+        while temp: 
+            if temp.data == deletekey: 
+                break
+            prev = temp 
+            temp = temp.next
+            
+        if(temp == None): 
+            return
+        prev.next = temp.next
+        temp = None
+#------------------Tester------------    
+MyList()
+lst1 = MyList()
+lst1.showList()
+lst1.isEmpty()
+
+lst2 = MyList([5,6,7])
+# lst2.showList()
+# lst2.isEmpty()
+# lst2.insert(19)
+# lst2.insert(29,10)
+lst2.remove(7)
+# lst3 = MyList(MyList([6,7,8]))
+lst2.showList()
+# lst2.clear()
+lst2.isEmpty()
+
+#------------------------------------------------------------------------------------------------------------------
+
+#Task03
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class MyList:
+    def __init__(self,lst=None,ncount=0):
+        self.head = None
+        self.tail=None
+        self.ncount=ncount
+
+        if lst:
+            for elm in lst:
+                node=Node(elm)
+                self.ncount+=1
+                if self.tail is None:
+                    self.head = node
+                    self.tail = node
+                else:
+                    self.tail.next = node
+                    self.tail = node
+        else:
+            return
+
+    def evenList(self):
+        copy_even = MyList() #Creating new object (Linkedlist)
+        tmp = self.head
+        if self.head is None:
+            print("Empty List")
+        else:
+            while tmp!=None:
+                if tmp.data%2==0:
+                    node = Node(tmp.data)
+                    if copy_even.head == None:
+                        copy_even.head = node
+                        copy_even.tail = node
+                    else:
+                        copy_even.tail.next = node
+                        copy_even.tail = node
+
+                tmp = tmp.next
+            copy_even.showList()
+            
+    def findList(self,item):
+        current = self.head
+        found = False
+        while current and not found:
+            if current.data == item:
+                found = True
+            else:
+                current = current.next
+        return found   
+    
+    def showList(self):
+        p = self.head
+        if self.head == None:
+            print("Empty List")
+        else:
+            while p:
+                print(p.data,end = " ")
+                p = p.next
+            print()
+    def reverse(self):
+        prev = None
+        current = self.head
+        while current:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        self.head = prev  
+        return
+    
+    def sort(self):
+        for i in range(self.ncount-1):
+            curr=self.head
+            nxt=curr.next
+            prev=None
+            while nxt:
+                if curr.data>nxt.data:
+                    if (prev==None):
+                        prev=curr.next
+                        nxt=nxt.next
+                        prev.next=curr
+                        curr.next=nxt
+                        self.head=prev
+                    else:   
+                        temp=nxt
+                        nxt=nxt.next
+                        prev.next=curr.next
+                        prev=temp
+                        temp.next=curr
+                        curr.next=nxt
+                else:           
+                    prev,curr,nxt = curr,nxt,nxt.next
+                i+=1  
+                
+    def sumList(self):
+        sum = 0
+        p = self.head
+        if self.head == None:
+            print("Empty List")
+        else:
+            while p:
+                sum+=int(p.data)
+                p = p.next
+            print('Summation = ',sum)    
+
+
+    def rotate(self,rt,k):
+        if rt=='left':
+            if k == 0: 
+                return
+            current = self.head
+            cnt = 1
+            while(cnt<k and current):
+                current = current.next
+                cnt += 1
+                
+            if current is None:
+                return
+            temp = current 
+            
+            while current.next is not None:
+                current = current.next
+                
+            current.next,self.head = self.head,temp.next
+            temp.next = None
+            
+        elif rt=='right':
+            if k == 0: 
+                return
+            current = self.head
+            cnt = 1
+            while(current.next):
+                current = current.next
+                cnt += 1
+            current.next= self.head
+            prelen = cnt-k%cnt-1
+            pre = self.head
+            if current is None:
+                return
+
+            while prelen>0:
+                pre = pre.next
+                prelen-=1
+            self.head = pre.next
+            pre.next=None
+            
+        else:
+            return
+        
+#------Tester---------
+lst = MyList([1,22,5,3,8])
+lst.evenList()
+lst.reverse()
+lst.showList()
+lst.sort()
+lst.showList()
+lst.sumList()
+
+
+a= [3,2,5,1,8]            
+lst2 = MyList(a)
+lst2.rotate('left',2)
+lst2.showList()
+a= [3,2,5,1,8]            
+lst3 = MyList(a)
+lst3.rotate('right',2)
+lst3.showList()
+
+lst.findList(8)
+#------------------------------------------------------------------------------------------------------------------

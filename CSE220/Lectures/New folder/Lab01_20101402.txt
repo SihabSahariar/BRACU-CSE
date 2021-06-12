@@ -1,0 +1,203 @@
+#Task1-Shift Left k Cells
+def shiftLeft(source,k):
+    j=0
+    while j<k:
+        i = 1
+        while i<len(source):
+            source[i-1] = source[i]
+            i+=1
+        source[-1] = 0
+        j+=1
+    print(source)
+    return #source
+
+source=[10,20,30,40,50,60]
+shiftLeft(source,3)
+
+#Task2-Rotate Left k cells
+
+def rotateLeft(source,k):
+    j =0
+    while j<k:
+        
+        i = 1
+        lost = source[0]
+        while i<len(source):
+            source[i-1] = source[i]
+            i+=1
+        source[-1] = lost
+        j+=1
+    print(source)
+    return 
+    
+source=[10,20,30,40,50,60]
+rotateLeft(source,3)
+
+#Task3-Remove an element from an array
+def remove(source,size,id):
+    if id<0 or id>size:
+        print("Wrong Index")
+        return
+    i = id
+    while i<size:
+        source[i]=source[i+1]
+        i+=1
+        source[-1] = 0
+    print(source)
+    return
+
+source=[10,20,30,40,50,0,0]
+remove(source,5,2)
+
+#Task4-Remove all occurrences of a particular element from an array
+def removeAll(source,size,element):
+    res =[]
+    for i in source:
+        if i != element:
+            res+=[i]
+    for i in range(len(res)):
+        res+=[0]
+    print(res)       
+    
+source=[10,2,30,2,50,2,2,0,0]
+removeAll(source,7,2)
+
+
+#Task5-Splitting an Array
+
+def split(array):
+    sum = 0
+    for i in array:
+        sum+=i
+    sum1=0
+    i=0
+    while i<len(array):
+        sum1+=array[i]
+        if sum1 == sum-sum1:
+            print("true")
+            return 
+        i+=1
+    print("false")
+    return 
+
+array = [10, 3, 1, 2, 10]
+split(array)
+
+#Task6-Array series
+def series(n):
+    l = []
+    for i in range(1,n+1):
+        for k in range(n-i):
+            l+=[0]
+        for k in range(i,0,-1):
+            l+=[k]
+    i=1
+    while i<=len(l):
+        if i-1==len(l)-1:
+            print(l[i-1],end=" ")
+        elif i%n==0:
+            print(l[i-1],end=",  ")
+        else:
+            print(l[i-1],end=", ")
+        i+=1
+        
+    return 
+    
+series(4)
+
+#Task7-Max Bunch Count
+def max_bunch(l):
+    if l == []:
+        print("Nothing")
+        return
+
+    element = l[0]
+    new = []
+    lar = []
+    for e in l:            
+        if e == element:
+            new+=[e]
+        else:
+            if len(new) > len(lar):
+                lar = new
+            new = []
+            new+=[e]
+            element = e
+    if len(new) > len(lar):
+        lar = new    
+    print(len(lar))
+    return
+
+
+l = [1,1,2, 2, 1, 1,1,1]
+max_bunch(l)
+
+#Task8- Repetition
+def countElement(a):
+    g = {}
+    for i in a:
+        if i in g:
+            g[i] +=1
+        else:
+             g[i] =1
+    val=[]            
+    for x,y in g.items():
+        if y>1:
+            val+=[y]
+    k = 0
+    while k<len(val):
+        count = 0
+        for ele in val: 
+            if (ele == x): 
+                count = count + 1
+        if count>1:
+            print("True")
+            return 
+        k+=1
+    print("False")        
+    return 
+
+a = [4,5,6,6,4,3,6,4]
+countElement(a)
+
+# Circular Array
+#Task1- Palindrome
+def palindrome(c,start,size):
+    lst1=[]
+    lst2=[]
+    index=start
+
+    i=0
+
+    while(i<size):
+
+        lst1+=[c[index]]
+
+        index=(index+1)%len(c)
+
+        i=i+1
+        ind=(start+size-1)%len(c)
+
+    j=0
+
+    while(j<size):
+
+        lst2+=[c[ind]]
+
+        ind-=1
+
+        if(ind<0):
+
+            ind=len(c)-1  
+
+        j+=1
+    for i in range(len(lst1)):
+        if lst1[i]!=lst2[i]:
+            print("False")
+            return
+    print("True")
+    return
+
+c =  [20,10,0,0,0,10,20,30]
+palindrome(c,5,5)
+    

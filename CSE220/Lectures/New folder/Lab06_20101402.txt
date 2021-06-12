@@ -1,0 +1,137 @@
+#----------------------Task1--------------------------
+def selecttionSort(array,size): 
+        if size==-1:
+            return array
+        imax=size-1
+        for j in reversed(range(size-1)):
+            if array[j]>array[imax]:
+                imax = j
+        temp = array[imax]
+        array[imax] = array[size-1]
+        array[size-1] = temp 
+        return selecttionSort(array,size-1)
+
+#----------------------Task2--------------------------
+def insertionSort(A,i):
+    if i==len(A):
+        return A
+    else:
+        for j in range(i-1,-1,-1):
+            if(A[j+1]<A[j]):
+                A[j],A[j+1] = A[j+1],A[j]
+            else:
+                break
+        return insertionSort(A,i+1)
+
+#----------------------Task3--------------------------
+def bubbleSort(self):
+    end = None
+    while end != self.startNode:
+        r = self.startNode
+        p = self.startNode
+        
+        while p.ref != end:
+            q = p.ref
+            if p.item > q.item:
+                p.ref = q.ref
+                q.ref = p
+                if p != self.startNode:
+                    r.ref = q
+                else:
+                    self.starNode = q
+                p,q = q,p
+            r = p
+            p = p.ref
+        end = p
+
+##----------------------Task4--------------------------
+def swap(head_ref, currX, currY, prevY) :
+    head_ref = currY 
+    prevY.next = currX 
+    currY.next,currX.next = currX.next,currY.next
+    return head_ref
+def SelectionSort(head):
+
+    if head.next is None:
+        return head 
+
+    mn ,beforeMin = head , None
+    ptr = head
+    while ptr.next:
+        if ptr.next.data < mn.data:      
+            mn,beforeMin = ptr.next,ptr
+        ptr = ptr.next
+
+    if mn is not head:
+        head = swap(head, head, mn, beforeMin) 
+    head.next = SelectionSort(head.next) 
+    return head 
+
+#----------------------Task5--------------------------
+def Insert(head_Node, newNode):
+  
+    current = None
+    if (head_Node is None):
+        head_Node = newNode
+    elif head_Node.data >= newNode.data :
+        newNode.next = head_Node
+        newNode.next.prev = head_Node= newNode
+    else :
+        current = head_Node
+        while (current.next and current.next.data < newNode.data):
+            current = current.next
+        newNode.next = current.next
+        if current.next:
+            newNode.next.prev = newNode
+        current.next,newNode.prev = newNode,current
+    return head_Node;
+
+def insertionSort(head_Node):
+    sorted = None
+    current = head_Node
+    while current :
+        next = current.next
+        current.prev = None
+        current.next = None
+        sorted = Insert(sorted, current)
+        current = next
+    head_Node = sorted 
+    return head_Node
+
+#----------------------Task6--------------------------
+def bs_rec(arra,left,right,key):
+    mid = left+((right-left)//2)
+    if left>right:
+        return False
+    else:
+        if arra[mid]==key:
+            return mid
+        elif arra[mid]>key:
+            right = mid-1
+        elif arra[mid]<key:
+            left = mid+1
+            
+    return bs_rec(arra,left,right,key)
+
+
+#----------------------Task7--------------------------
+fibo_cache={}
+
+def fibo(x):
+    
+    if x in fibo_cache:
+        return fibo_cache[x] #if we have already computed then return it
+    #calculate it 
+    if x==1:
+        return 0
+    elif x==2:
+        return 1
+  
+    else:
+        val =fibo(x-1)+fibo(x-2)
+    #cache the value and return it
+    fibo_cache[x] = val
+    return val
+        
+for i in range(1,12):
+    print(fibo(i),end=' ')

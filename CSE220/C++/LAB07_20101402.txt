@@ -1,0 +1,102 @@
+#Task1
+class KeyIndex:
+    def __init__(self,array):
+        self.arr = []
+        for i in array:
+            self.arr+=[i]
+
+
+    def sort(self):
+        mx = self.arr[0]
+        mn = self.arr[0]
+        for i in range(len(self.arr)):
+            if self.arr[i]>mx:
+                mx = self.arr[i]
+            if self.arr[i] <mn:
+                mn = self.arr[i]
+                
+        new_arr = [0]*(mx-mn+1)
+        i=0
+        while(i<len(self.arr)):
+            new_arr[self.arr[i]-mn]+=1
+            i+=1
+            
+        k= 0
+        for j in range(mn,mx+1):
+            i = 0
+            for i in range(new_arr[j-mn]):
+                self.arr[k] = j;
+                k+=1
+        return self.arr
+    
+    
+    def search(self,val):
+        mx = self.arr[0]
+        mn = self.arr[0]
+        for i in range(len(self.arr)):
+            if self.arr[i]>mx:
+                mx = self.arr[i]
+            if self.arr[i] <mn:
+                mn = self.arr[i]
+        new= [0]*(mx-mn+1)
+        for i in range(len(self.arr)):
+            new[self.arr[i]-mn]=True  
+        if val<mn or val>mx:
+            return False
+        return new[val-mn]!=0
+            
+if __name__ =="__main__":   
+    #Class constructor 
+    obj1 = KeyIndex([-1,-3,-6,4,5])  
+    
+    #Sort the array 
+    obj1.sort()
+    print(obj1.arr)
+    
+    #Search the value
+    key = obj1.search(-3)
+    print(key)
+
+
+
+
+
+#Task2
+n = 9
+lst = []
+hash = []
+for i in range(n):
+    k = input()
+    lst+=[k]
+i =0
+while i<len(lst):
+    alpha =0
+    som = 0
+    j = 0
+    while j<len(lst[i]):
+        if lst[i][j] >='0':
+            if lst[i][j]<='9':
+                sum = int(lst[i][j])-48
+                som+=sum
+        else:
+            if lst[i][j] not in 'AEIOU':
+                alpha+=1
+        j+=1
+    
+
+    
+    res = (alpha*24+som)%9
+    while True:
+        if hash[res] =="":
+            hash[x] = lst[i]
+            break
+        x = (x+1)%n
+        
+    for i in hash:
+        print(i,end="")
+                
+    
+            
+        
+    
+    

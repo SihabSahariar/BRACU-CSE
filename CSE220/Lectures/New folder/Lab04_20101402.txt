@@ -1,0 +1,88 @@
+#-----------------------------Task1-----------------------------
+
+def List_check(st):
+    stack = [] 
+    opened = ['[','(','{']
+    closed = [']',')','}']  
+    for i in st: 
+        if i in opened:
+            stack+=[i]  
+        if i in closed:
+            if(len(stack)==0):  
+                return f"This expression is NOT correct.Error at character #{st.index(i)+1}.'{i}'-not opened."
+            elem = stack.pop()
+            id1=opened.index(elem)
+            id2=closed.index(i)
+            if((elem not in opened) or (id1!=id2)):
+                return f"This expression is NOT correct.\nError at character #{st.index(elem)+1}.'{elem}'-not closed."
+
+    return "This expression is correct"
+    
+if __name__ == "__main__":
+    s = "1+2*[3*3+{4–5(6(7/8/9)+10)–11+(12*8)]+14"
+    res = List_check(s)
+    print(res)
+    
+
+
+
+#-------------------------Task2---------------------------
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+ 
+class Stack:   
+    def __init__(self):
+        self.head = None
+        
+    def isempty(self):
+        if self.head == None:
+            return True
+        else:
+            return False
+    def push(self, data):  
+        if self.head is None:
+            self.head = Node(data)
+        else:
+            new_node = Node(data)
+            new_node.next = self.head
+            self.head = new_node
+ 
+    def pop(self):  
+        if self.head is None:
+            return None
+        else:
+            popped = self.head.data
+            self.head = self.head.next
+            return popped
+ 
+
+
+
+def linkedList_check(s):
+    stack = Stack()
+    opened = ['[','(','{']
+    closed = [']',')','}']  
+    for i in s:
+        if i in opened:
+            stack.push(i)
+        if i in closed:
+            elem = stack.pop()
+            if lst == None:
+                id1=opened.index(elem)
+                id2=closed.index(i)
+                return f"This expression is NOT correct.Error at character #{s.index(i)+1}.'{i}'-not opened."
+            if((elem not in opened) or (id1 != id2)):
+                return f"This expression is NOT correct.\nError at character #{s.index(elem)+1}.'{elem}'-not closed."
+            
+    return "This expression is correct"
+    
+
+    
+if __name__ == "__main__":
+    s = "1+2*[3*3+{4–5(6(7/8/9)+10)–11+(12*8)]+14"
+    res = balance_1(s)
+    print(res)
+    
